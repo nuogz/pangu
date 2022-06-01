@@ -19,9 +19,9 @@ const filesCopy = [
 	'LICENSE',
 	'.vscode/launch.json',
 	'.vscode/settings.json',
-	'.eslintrc.cjs',
-	'.npmrc',
-	'.gitignore|.gitignore.node',
+	'.eslintrc.cjs|eslintrc.cjs',
+	'.npmrc|npmrc',
+	'.gitignore|gitignore.node',
 	'jsconfig.json|jsconfig.preset.json',
 
 	'index.env.js',
