@@ -35,6 +35,7 @@ const filesCopy = [
 
 const dependencies = {
 	'@nuogz/desire': '^4',
+	'@nuogz/desire-route': '^1',
 	'@nuogz/pangu': '^1',
 	'fs-readdir-recursive': '^1',
 };

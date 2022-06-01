@@ -1,11 +1,10 @@
-import { resolve } from 'path';
-
-import Desire from '@nuogz/desire';
-
 import './index.env.js';
 import { dirPackage, C, G } from '@nuogz/pangu';
 
-import readRoute from './lib/route.js';
+import { resolve } from 'path';
+
+import Desire from '@nuogz/desire';
+import readRoute from '@nuogz/desire-route';
 
 
 
