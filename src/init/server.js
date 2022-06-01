@@ -28,7 +28,6 @@ const filesCopy = [
 	'index.js|index.server.js',
 
 	'config/config.server.json',
-	'lib/route.js',
 	'src/version.api.js',
 ];
 
