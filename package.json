@@ -1,0 +1,22 @@
+{
+	"name": "@nuogz/pangu",
+	"version": "1.0.0",
+	"description": "",
+	"author": "Nuogz",
+	"license": "LGPL-3.0-or-later",
+	"main": "index.js",
+	"bin": "./index.bin.js",
+	"type": "module",
+	"engines": {
+		"node": ">=14.18.1"
+	},
+	"dependencies": {
+		"@nuogz/hades": "^4.0.4",
+		"@nuogz/poseidon": "^6.1.1",
+		"commander": "^9.3.0",
+		"moment": "^2.29.3"
+	},
+	"devDependencies": {
+		"eslint": "^8.16.0"
+	}
+}
