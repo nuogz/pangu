@@ -20,7 +20,7 @@ const filesCopy = [
 	'.vscode/launch.json',
 	'.vscode/settings.json',
 	'.eslintrc.cjs',
-	'.gitignore',
+	'.gitignore|.gitignore.node',
 	'jsconfig.json|jsconfig.preset.json',
 
 	'index.env.js',
