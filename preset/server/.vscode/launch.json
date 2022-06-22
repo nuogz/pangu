@@ -10,7 +10,7 @@
 			"skipFiles": [
 				"<node_internals>/**"
 			],
-			"cwd": "${fileDirname}",
+			"cwd": "${workspaceRoot}",
 			"program": "index.js",
 			"args": [
 				"${workspaceRoot}"
