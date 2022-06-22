@@ -2,15 +2,13 @@
 
 import { Command } from 'commander/esm.mjs';
 
-import { dirFromFileURL } from './lib/dir.js';
+import { dirPackage } from './lib/dir.js';
 import { readPackage } from './lib/package.js';
 
-import initNode from './src/init/node.js';
-import initServer from './src/init/server.js';
+import init from './src/init.js';
 
 
 
-const dirPackage = dirFromFileURL(import.meta.url);
 const PKG = readPackage(dirPackage);
 
 
@@ -18,9 +16,11 @@ const CMD = new Command();
 
 CMD.version(PKG.version);
 
-const cmdInit = CMD.command('init');
 
-cmdInit.command('node').action(initNode);
-cmdInit.command('server').action(initServer);
+CMD.command('init')
+	.option('-f, --force', 'Force overwrite file')
+	.argument('<types...>')
+	.action((types, options) => init(types, options.force));
+
 
 CMD.parse(process.argv);

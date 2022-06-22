@@ -8,5 +8,11 @@
 	"type": "module",
 	"engines": {
 		"node": ">=14.18.1"
+	},
+	"dependencies": {
+		"@nuogz/pangu": "link:E:/Project/@nuogz/pangu"
+	},
+	"devDependencies": {
+		"eslint": "^8"
 	}
 }

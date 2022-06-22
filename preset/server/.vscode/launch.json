@@ -4,25 +4,22 @@
 		{
 			"type": "pwa-node",
 			"request": "launch",
-			"name": "Test BIN",
+			"name": "Server",
 			"console": "integratedTerminal",
 			"runtimeExecutable": "node.exe",
 			"skipFiles": [
 				"<node_internals>/**"
 			],
-			"cwd": "E:/Project/@nuogz-app/_playground",
-			"program": "${workspaceRoot}/index.bin.js",
+			"cwd": "${fileDirname}",
+			"program": "index.js",
 			"args": [
-				"init",
-				"-f",
-				"server",
-				"vue"
-			],
+				"${workspaceRoot}"
+			]
 		},
 		{
 			"type": "pwa-node",
 			"request": "launch",
-			"name": "Test Current File",
+			"name": "Luanch Current File",
 			"console": "integratedTerminal",
 			"runtimeExecutable": "node.exe",
 			"skipFiles": [
@@ -32,7 +29,7 @@
 			"program": "${fileBasename}",
 			"args": [
 				"${workspaceRoot}"
-			],
-		},
+			]
+		}
 	]
 }

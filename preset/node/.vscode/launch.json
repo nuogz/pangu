@@ -4,7 +4,7 @@
 		{
 			"type": "pwa-node",
 			"request": "launch",
-			"name": "Test Current File",
+			"name": "Luanch Current File",
 			"console": "integratedTerminal",
 			"runtimeExecutable": "node.exe",
 			"skipFiles": [
@@ -14,7 +14,7 @@
 			"program": "${fileBasename}",
 			"args": [
 				"${workspaceRoot}"
-			],
-		},
+			]
+		}
 	]
 }
