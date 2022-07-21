@@ -60,7 +60,7 @@ const rcNode = parseKeys({
 		noUnusedVars: [2, { vars: 'all', args: 'none' }],
 		noVar: [2],
 		noConsole: [2],
-		requireAtomicUpdates: [1],
+		requireAtomicUpdates: [1, { allowProperties: true }],
 	},
 	overrides: [rcBrowser].filter(rc => rc)
 });
