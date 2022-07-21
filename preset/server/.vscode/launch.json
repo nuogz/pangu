@@ -2,7 +2,7 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"type": "pwa-node",
+			"type": "node",
 			"request": "launch",
 			"name": "Server",
 			"console": "integratedTerminal",
@@ -17,7 +17,7 @@
 			]
 		},
 		{
-			"type": "pwa-node",
+			"type": "node",
 			"request": "launch",
 			"name": "Luanch Current File",
 			"console": "integratedTerminal",

@@ -1,6 +1,6 @@
 {
 	"name": "@nuogz/pangu",
-	"version": "1.4.3",
+	"version": "1.4.4",
 	"description": "",
 	"author": "Nuogz",
 	"license": "LGPL-3.0-or-later",
@@ -14,11 +14,11 @@
 		"@nuogz/hades": "^4.0.4",
 		"@nuogz/poseidon": "^6.1.1",
 		"chalk": "^5.0.1",
-		"commander": "^9.3.0",
+		"commander": "^9.4.0",
 		"fs-extra": "^10.1.0",
-		"moment": "^2.29.3"
+		"moment": "^2.29.4"
 	},
 	"devDependencies": {
-		"eslint": "^8.18.0"
+		"eslint": "^8.20.0"
 	}
 }
