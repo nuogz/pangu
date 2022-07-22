@@ -1,6 +1,6 @@
 {
 	"name": "@nuogz/pangu",
-	"version": "1.4.5",
+	"version": "1.4.6",
 	"description": "",
 	"author": "Nuogz",
 	"license": "LGPL-3.0-or-later",
@@ -11,7 +11,7 @@
 		"node": ">=14.18.1"
 	},
 	"dependencies": {
-		"@nuogz/hades": "^4.0.4",
+		"@nuogz/hades": "^4.1.0",
 		"@nuogz/poseidon": "^6.1.1",
 		"chalk": "^5.0.1",
 		"commander": "^9.4.0",
