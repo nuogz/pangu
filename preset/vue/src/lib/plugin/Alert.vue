@@ -63,7 +63,7 @@
 	export const waiter = ref(null);
 
 
-	const showBox = function(content_ = '', title_ = '提示', cancel_ = 0, button1_ = {}, button2_ = {}, button3_ = {}, colorTop_) {
+	const showBox = (content_ = '', title_ = '提示', cancel_ = 0, button1_ = {}, button2_ = {}, button3_ = {}, colorTop_) => {
 		title.value = String(title_);
 		content.value = String(content_);
 
@@ -80,43 +80,43 @@
 		});
 	};
 
-	export const $alert = function(content, title = '提示',
+	export const $alert = (content, title = '提示',
 		button1 = { text: '确定', value: true },
 		button2,
 		button3,
 		cancel = 1,
 		colorTop
-	) {
+	) => {
 		return showBox(content, title, cancel, button1, button2, button3, colorTop);
 	};
 
-	export const $quest = function(content, title = '提示',
+	export const $quest = (content, title = '提示',
 		button1 = { text: '是', value: true },
 		button2 = { text: '否', value: false, reverse: true },
 		button3,
 		cancel = 2,
 		colorTop
-	) {
+	) => {
 		return showBox(content, title, cancel, button1, button2, button3, colorTop);
 	};
 
-	export const $quest3 = function(content, title = '提示',
+	export const $quest3 = (content, title = '提示',
 		button1 = { text: '是', value: true },
 		button2 = { text: '否', value: false, },
 		button3 = { text: '取消', value: 'cancel', reverse: true },
 		cancel = 3,
 		colorTop
-	) {
+	) => {
 		return showBox(content, title, cancel, button1, button2, button3, colorTop);
 	};
 
-	export const $okay = function(action = '操作', title = '成功', next, button1 = { text: '确定', value: true }, button2, button3, cancel = 0, colorTop = '$okay') {
+	export const $okay = (action = '操作', title = '成功', next, button1 = { text: '确定', value: true }, button2, button3, cancel = 0, colorTop = '$okay') => {
 		const content = `${action}成功${next ? `。${next}` : ''}`;
 
 		return showBox(content, title, cancel, button1, button2, button3, colorTop);
 	};
 
-	export const $fail = function(action = '操作', error, title = '失败', button1 = { text: '确定', value: true }, button2, button3, cancel = 0, colorTop = '$fail') {
+	export const $fail = (action = '操作', error, title = '失败', button1 = { text: '确定', value: true }, button2, button3, cancel = 0, colorTop = '$fail') => {
 		const content = (`${action}失败，原因：${error?.message ?? error ?? '未知'}`);
 
 		return showBox(content, title, cancel, button1, button2, button3, colorTop);
@@ -136,21 +136,13 @@
 </script>
 
 <script setup>
-
-
-
-
 	const moving = ref(false);
 	const top = ref(0);
 	const left = ref(0);
 
 
-
-
-
 	const styleColorTop = computed(() => colorTop.value?.startsWith('$') ? false : (colorTop.value ?? false));
 	const attrColorTop = computed(() => colorTop.value?.startsWith('$') ? colorTop.value.replace('$', '').toLowerCase() : null);
-
 
 
 	const showMask = ref(false);

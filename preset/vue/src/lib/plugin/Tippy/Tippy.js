@@ -6,7 +6,7 @@ import Tippy from 'tippy.js';
 import compTippy from './Tippy.vue';
 
 
-const toPlacement = function(bind) {
+const toPlacement = bind => {
 	let placement = 'top';
 
 	if(!(bind.value instanceof Element) && typeof bind.value == 'object' && bind.value && bind.value.placement) {
@@ -52,7 +52,7 @@ const toPlacement = function(bind) {
 	return placement;
 };
 
-const toContent = function(bind, isOld = false) {
+const toContent = (bind, isOld = false) => {
 	const value = !isOld ? bind.value : bind.oldValue;
 
 	if(value instanceof Element) {
@@ -82,7 +82,7 @@ const optionDirects = [
 	'distance',
 ];
 
-const toOption = function(bind) {
+const toOption = bind => {
 	const option = {
 		content: toContent(bind),
 		theme: 'light-border',
@@ -120,7 +120,7 @@ const toOption = function(bind) {
 
 
 export const install = app => {
-	app.provide('$tip', function(props) {
+	app.provide('$tip', props => {
 		const elTippy = document.createElement('div');
 		document.body.insertBefore(elTippy, document.body.children[0]);
 
@@ -131,13 +131,13 @@ export const install = app => {
 		appTippy.mount(elTippy);
 	});
 
-	const atMounted = function(el, bind) {
+	const atMounted = (el, bind) => {
 		if(bind.value === false) { return; }
 
 		return Tippy(el, toOption(bind));
 	};
 
-	const atUpdate = function(el, bind) {
+	const atUpdate = (el, bind) => {
 		if(bind.value === false) { return; }
 
 		if(toContent(bind) != toContent(bind, true)) {

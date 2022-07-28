@@ -29,7 +29,7 @@
 	});
 
 
-	// onMounted(() => tabs.addIcon('$$$main-module', null, '$$$main-module-type', '$$$main-module-name'));
+	// onMounted(() => tabs.addIcon('$$$main-module-title', null, '$$$main-module-type', '$$$main-module-slot'));
 </script>
 
 <style lang="sass" scoped>

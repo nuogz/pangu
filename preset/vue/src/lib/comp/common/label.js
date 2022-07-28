@@ -18,7 +18,7 @@ export const props = {
 	labelTextOnly: { type: Boolean, default: false },
 };
 
-export const setup = function(props, disabling_) {
+export const setup = (props, disabling_) => {
 	const labelTextOnly_ = computed(() => parseBoolAttr(props.labelTextOnly));
 
 	const labelQuick = computed(() => {

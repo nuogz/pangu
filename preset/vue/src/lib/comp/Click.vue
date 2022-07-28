@@ -1,11 +1,12 @@
 <template>
-	<comp-click>{{text}}</comp-click>
+	<comp-click :white="brop(white)">{{text}}</comp-click>
 </template>
 
 <script setup>
 	defineProps({
 		// 文本
 		text: { type: String, default: '' },
+		white: { type: [Boolean, String], default: false },
 	});
 </script>
 
@@ -17,4 +18,10 @@ comp-click
 
 	&:focus, &:hover
 		@apply shadow-md filter brightness-110
+
+	&[white]
+		@apply border
+		border-color: var(--colorMain)
+		color: var(--colorMain)
+		background-color: var(--colorTextMain)
 </style>

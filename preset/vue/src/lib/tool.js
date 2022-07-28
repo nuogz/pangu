@@ -1,4 +1,11 @@
-const randomString = function(len = 32) {
+/**
+ * 通过JSON化函数深度拷贝数据
+ * @param {any} object 可JSON化的数据
+ */
+export const copyJSON = object => JSON.parse(JSON.stringify(object));
+
+
+export const randomString = (len = 32) => {
 	let dict = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 	let max = dict.length;
 
@@ -10,5 +17,3 @@ const randomString = function(len = 32) {
 
 	return result;
 };
-
-export default randomString;

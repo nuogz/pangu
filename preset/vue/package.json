@@ -9,6 +9,7 @@
 		"axios": "^0.27",
 		"eslint": "^8",
 		"eslint-plugin-vue": "^9",
+		"moment": "^2",
 		"postcss": "^8",
 		"sass": "^1",
 		"tailwindcss": "^3",
