@@ -25,7 +25,7 @@ export const parseSwitch = (value, name) => {
 };
 
 
-export const toCssLen = ((value) => {
+export const toCSSLength = (value) => {
 	let rawTrim = String(value).trim();
 
 	if(/^[1-9]\d*(\.\d+)?$/.test(rawTrim)) {
@@ -37,4 +37,4 @@ export const toCssLen = ((value) => {
 	else {
 		return rawTrim;
 	}
-});
+};
