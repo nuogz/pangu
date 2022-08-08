@@ -1,5 +1,6 @@
 <template>
 	<p-sidebar v-if="!$hidden" ref="domSidebar" @contextmenu.self.prevent="showMenuSidebar">
+		<slot name="buttons-before" />
 		<template v-for="(tab, index) of tabs.list" :key="`tab-${tab?.id}`">
 			<template v-if="!tab.isHidden">
 				<p-button
