@@ -46,6 +46,7 @@ if((PKG.dependencies ?? {})['eslint-plugin-vue'] || (PKG.devDependencies ?? {})[
 	});
 }
 
+
 const rcNode = parseKeys({
 	root: true,
 	ignorePatterns: ['dist'],
@@ -60,7 +61,7 @@ const rcNode = parseKeys({
 		noUnusedVars: [2, { vars: 'all', args: 'none' }],
 		noVar: [2],
 		noConsole: [2],
-		requireAtomicUpdates: [1],
+		requireAtomicUpdates: [1, { allowProperties: true }],
 	},
 	overrides: [rcBrowser].filter(rc => rc)
 });

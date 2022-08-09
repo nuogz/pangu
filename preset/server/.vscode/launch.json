@@ -19,7 +19,7 @@
 		{
 			"type": "node",
 			"request": "launch",
-			"name": "Luanch Current File",
+			"name": "Launch Current File",
 			"console": "integratedTerminal",
 			"runtimeExecutable": "node.exe",
 			"skipFiles": [

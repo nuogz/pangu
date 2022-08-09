@@ -16,7 +16,7 @@ const parseKeys = rc => {
 
 
 let rcBrowser;
-if((PKG.dependencies ?? {}).vue || (PKG.devDependencies ?? {}).vue) {
+if((PKG.dependencies ?? {})['eslint-plugin-vue'] || (PKG.devDependencies ?? {})['eslint-plugin-vue']) {
 	rcBrowser = parseKeys({
 		files: ['src/**/*.{js,vue}'],
 		excludedFiles: ['src/**/*.{api,lib,map}.js', 'src/**/*.lib/**/*.js'],
@@ -41,10 +41,11 @@ if((PKG.dependencies ?? {}).vue || (PKG.devDependencies ?? {}).vue) {
 			defineProps: 'readonly',
 			defineEmits: 'readonly',
 			defineExpose: 'readonly',
-			withDefaults: 'readonly'
+			withDefaults: 'readonly',
 		},
 	});
 }
+
 
 const rcNode = parseKeys({
 	root: true,
