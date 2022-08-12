@@ -1,7 +1,7 @@
 {
 	"dependencies": {
-		"@nuogz/desire": "^4",
-		"@nuogz/desire-route": "^1"
+		"@nuogz/desire": "^5",
+		"@nuogz/desire-route": "^2"
 	},
 	"devDependencies": {
 		"eslint": "^8"
