@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 import { existsSync } from 'fs';
 import { resolve } from 'path';
 
@@ -23,6 +21,8 @@ const opers = {
 	'handle-json': handleJSON,
 	'concat-text-line': concatTextLine,
 };
+
+const console = globalThis.console;
 
 
 const ensureDirs = (envs, dirCWD) => {

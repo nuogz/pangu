@@ -34,7 +34,6 @@
 			]
 		},
 		".eslintrc.cjs|eslintrc.cjs": "copy|share",
-		".npmrc|npmrc": "copy|share",
 		".gitignore|gitignore.txt": "concat-text-line",
 		"jsconfig.json": {
 			"type": "handle-json",

@@ -1,8 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@nuogz/hades': ^4.1.0
-  '@nuogz/poseidon': ^6.1.1
+  '@nuogz/hades': ^5.0.5
+  '@nuogz/poseidon': ^7.0.3
   chalk: ^5.0.1
   commander: ^9.4.0
   eslint: ^8.21.0
@@ -10,8 +10,8 @@ specifiers:
   moment: ^2.29.4
 
 dependencies:
-  '@nuogz/hades': 4.1.0
-  '@nuogz/poseidon': 6.1.1
+  '@nuogz/hades': 5.0.5
+  '@nuogz/poseidon': 7.0.3
   chalk: 5.0.1
   commander: 9.4.0
   fs-extra: 10.1.0
@@ -86,11 +86,12 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@nuogz/hades/4.1.0:
-    resolution: {integrity: sha512-0aECj8QLfJ4vLJ4tIP6j59G5fbC649CRYvBtAs/lzswt2tnZtoO3yiOhLtx0Zf2ZsokvpKUHCRE25jf/yDeMRg==}
+  /@nuogz/hades/5.0.5:
+    resolution: {integrity: sha512-4/fVbM8iA8Svij+hL5JIoIk5OWmFuAmPUvL5tnlYtzvhWIREQZfnxKl4TnnF+QG7R/5T6WiReo4GWRRQgL4Tbg==}
+    engines: {node: '>=14.18.1'}
     dependencies:
-      chalk: 4.1.2
-      i18next: 21.8.16
+      '@nuogz/i18n': 1.2.0
+      chalk: 5.0.1
       log-update: 4.0.0
       log4js: 6.6.1
       moment: 2.29.4
@@ -99,10 +100,18 @@ packages:
       - supports-color
     dev: false
 
-  /@nuogz/poseidon/6.1.1:
-    resolution: {integrity: sha512-r6FYqTgpBejdFNCsqbPGYyanu1ETm7VVqYW3nFoXCaIcd1+T+sP40B5GMFARdhpW6I+fWBQgLUpSxXyWo6CyEw==}
+  /@nuogz/i18n/1.2.0:
+    resolution: {integrity: sha512-ku7AqnX0Acny5tp2pn24uWWt85vgs+yUcYnUivLYucHjH/r7DQ9QMGJ8Xs3pkuTZxQq1xr64YCcwPH78PBX8uA==}
     engines: {node: '>=14.18.1'}
     dependencies:
+      i18next: 21.9.0
+    dev: false
+
+  /@nuogz/poseidon/7.0.3:
+    resolution: {integrity: sha512-iPdh3csGnwVhUY+FFbblLrEzpEFwmezOiTJ+NKjY3Gcq0CNw2FA+uIBNQFgHlbRafhSmIA9xumuo4JOTmaA5tA==}
+    engines: {node: '>=14.18.1'}
+    dependencies:
+      '@nuogz/i18n': 1.2.0
       escape-string-regexp: 5.0.0
     dev: false
 
@@ -189,6 +198,7 @@ packages:
     dependencies:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
+    dev: true
 
   /chalk/5.0.1:
     resolution: {integrity: sha512-Fo07WOYGqMfCWHOzSXOt2CxDbC6skS/jO9ynEcmpANMoPrD+W1r1K6Vx7iNm+AQmETU1Xr2t+n8nzkV9t6xh3w==}
@@ -529,9 +539,10 @@ packages:
   /has-flag/4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
+    dev: true
 
-  /i18next/21.8.16:
-    resolution: {integrity: sha512-acJLCk38YMfEPjBR/1vS13SFY7rBQLs9E5m1tSRnWc9UW3f+SZszgH+NP1fZRA1+O+CdG2eLGGmuUMJW52EwzQ==}
+  /i18next/21.9.0:
+    resolution: {integrity: sha512-B+6/yd7rCpJidyPuBaEApUECx7G8Ai6+tqYhrChsY4MmQqJhG7qJ4eT6Lm1OnRhieVelEtfxh4aAQktdNVZtDA==}
     dependencies:
       '@babel/runtime': 7.18.9
     dev: false
@@ -892,6 +903,7 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       has-flag: 4.0.0
+    dev: true
 
   /text-table/0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}

@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 import { Command } from 'commander/esm.mjs';
 
 import { dirPackage } from './lib/dir.js';

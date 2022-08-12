@@ -32,7 +32,6 @@ Moment.defineLocale('zh-cn', {
 			return hour >= 11 ? hour : hour + 12;
 		}
 	},
-	// eslint-disable-next-line no-unused-vars
 	meridiem: function(hour, minute, isLower) {
 		let hm = hour * 100 + minute;
 		if(hm < 600) {

@@ -4,25 +4,7 @@
 		{
 			"type": "node",
 			"request": "launch",
-			"name": "Test BIN",
-			"console": "integratedTerminal",
-			"runtimeExecutable": "node.exe",
-			"skipFiles": [
-				"<node_internals>/**"
-			],
-			"cwd": "E:/Project/@nuogz-app/_playground",
-			"program": "${workspaceRoot}/index.bin.js",
-			"args": [
-				"init",
-				"-f",
-				"server",
-				"vue"
-			],
-		},
-		{
-			"type": "node",
-			"request": "launch",
-			"name": "Test Current File",
+			"name": "Launch Current File",
 			"console": "integratedTerminal",
 			"runtimeExecutable": "node.exe",
 			"skipFiles": [
@@ -32,6 +14,23 @@
 			"program": "${fileBasename}",
 			"args": [
 				"${workspaceRoot}"
+			]
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Launch BIN",
+			"console": "integratedTerminal",
+			"runtimeExecutable": "node.exe",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"cwd": "",
+			"program": "${workspaceRoot}/index.bin.js",
+			"args": [
+				"init",
+				"server",
+				"vue"
 			],
 		},
 	]

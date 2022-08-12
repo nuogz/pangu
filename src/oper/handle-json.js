@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 import { existsSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 
@@ -8,6 +6,8 @@ import Chalk from 'chalk';
 import { readJSONSync } from '../../lib/fs-extra.js';
 
 
+
+const console = globalThis.console;
 
 const seek = (object, textPart = '') => {
 	const parts = textPart.split('.').filter(p => p);
