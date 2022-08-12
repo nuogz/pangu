@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v2.1.0 - 2022.08.12 17
+* main function `config (Poseidon)` support params from `NENV_NODE_FUNC`;
+
+
 ## v2.0.1 - 2022.08.12 11
 * bump up `@nuogz/desire` to `v5.x` and `@nuogz/desire-route` to `v2.x` in preset
 

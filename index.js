@@ -1,7 +1,7 @@
 let E = process.env.NENV_NODE_FUNC ?? [];
 
 if(typeof E == 'string') { E = E.split(';'); }
-E = E.filter(env => env.trim()).reduce((e, env) => {
+E = process.E = E.filter(env => env.trim()).reduce((e, env) => {
 	let [target, params = ''] = env.split(':');
 	params = params.split(',').filter(env => env.trim());
 
