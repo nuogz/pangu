@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v2.1.1 - 2022.08.18 11
+* fix bin bug when init config
+* update packages
+
+
 ## v2.1.0 - 2022.08.12 17
 * main function `config (Poseidon)` support params from `NENV_NODE_FUNC`;
 

@@ -5,7 +5,7 @@ specifiers:
   '@nuogz/poseidon': ^7.0.3
   chalk: ^5.0.1
   commander: ^9.4.0
-  eslint: ^8.21.0
+  eslint: ^8.22.0
   fs-extra: ^10.1.0
   moment: ^2.29.4
 
@@ -18,7 +18,7 @@ dependencies:
   moment: 2.29.4
 
 devDependencies:
-  eslint: 8.21.0
+  eslint: 8.22.0
 
 packages:
 
@@ -104,7 +104,7 @@ packages:
     resolution: {integrity: sha512-ku7AqnX0Acny5tp2pn24uWWt85vgs+yUcYnUivLYucHjH/r7DQ9QMGJ8Xs3pkuTZxQq1xr64YCcwPH78PBX8uA==}
     engines: {node: '>=14.18.1'}
     dependencies:
-      i18next: 21.9.0
+      i18next: 21.9.1
     dev: false
 
   /@nuogz/poseidon/7.0.3:
@@ -295,13 +295,13 @@ packages:
       estraverse: 5.3.0
     dev: true
 
-  /eslint-utils/3.0.0_eslint@8.21.0:
+  /eslint-utils/3.0.0_eslint@8.22.0:
     resolution: {integrity: sha512-uuQC43IGctw68pJA1RgbQS8/NP7rch6Cwd4j3ZBtgo4/8Flj4eGE7ZYSZRN3iq5pVUv6GPdW5Z1RFleo84uLDA==}
     engines: {node: ^10.0.0 || ^12.0.0 || >= 14.0.0}
     peerDependencies:
       eslint: '>=5'
     dependencies:
-      eslint: 8.21.0
+      eslint: 8.22.0
       eslint-visitor-keys: 2.1.0
     dev: true
 
@@ -315,8 +315,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /eslint/8.21.0:
-    resolution: {integrity: sha512-/XJ1+Qurf1T9G2M5IHrsjp+xrGT73RZf23xA1z5wB1ZzzEAWSZKvRwhWxTFp1rvkvCfwcvAUNAP31bhKTTGfDA==}
+  /eslint/8.22.0:
+    resolution: {integrity: sha512-ci4t0sz6vSRKdmkOGmprBo6fmI4PrphDFMy5JEq/fNS0gQkJM3rLmrqcp8ipMcdobH3KtUP40KniAE9W19S4wA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -330,7 +330,7 @@ packages:
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.1.1
-      eslint-utils: 3.0.0_eslint@8.21.0
+      eslint-utils: 3.0.0_eslint@8.22.0
       eslint-visitor-keys: 3.3.0
       espree: 9.3.3
       esquery: 1.4.0
@@ -541,8 +541,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /i18next/21.9.0:
-    resolution: {integrity: sha512-B+6/yd7rCpJidyPuBaEApUECx7G8Ai6+tqYhrChsY4MmQqJhG7qJ4eT6Lm1OnRhieVelEtfxh4aAQktdNVZtDA==}
+  /i18next/21.9.1:
+    resolution: {integrity: sha512-ITbDrAjbRR73spZAiu6+ex5WNlHRr1mY+acDi2ioTHuUiviJqSz269Le1xHAf0QaQ6GgIHResUhQNcxGwa/PhA==}
     dependencies:
       '@babel/runtime': 7.18.9
     dev: false
