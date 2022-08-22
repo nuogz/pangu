@@ -105,8 +105,10 @@ export default function handleJSON(file, fileSource = file, oper, envs, dirCWD, 
 		const source = readJSONSync(pathFileTarget);
 
 
-		source.dependencies = Object.assign(source.dependencies ?? {}, base.dependencies,);
-		source.devDependencies = Object.assign(source.devDependencies ?? {}, base.devDependencies,);
+		source.dependencies = Object.assign(source.dependencies ?? {}, base.dependencies);
+		source.devDependencies = Object.assign(source.devDependencies ?? {}, base.devDependencies);
+		source.typesSource = base.typesSource;
+
 
 		base = Object.assign(base, source);
 	}

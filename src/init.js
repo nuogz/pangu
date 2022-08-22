@@ -14,7 +14,7 @@ import concatTextLine from './oper/concat-text-line.js';
 
 
 
-const typesProject = ['node', 'server', 'vue'];
+const typesProject = ['node', 'server', 'browser', 'vue'];
 
 const opers = {
 	'copy': copy,
@@ -47,6 +47,7 @@ export default async function init(envs, force = false) {
 
 
 	envs = envs.filter(env => typesProject.includes(env));
+	if(envs.includes('vue')) { envs.unshift('browser'); }
 	if(envs.includes('vue') && envs.includes('server')) { envs.push('vue-server'); }
 
 	if(!envs.length) { throw 'empty envs'; }

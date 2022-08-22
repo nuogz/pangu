@@ -11,7 +11,8 @@
 			"isPackage": true,
 			"handles": [
 				"concat-key-value|dependencies",
-				"concat-key-value|devDependencies"
+				"concat-key-value|devDependencies",
+				"concat-array|typesSource"
 			]
 		},
 		"LICENSE": "copy|share",

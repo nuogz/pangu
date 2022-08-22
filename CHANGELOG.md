@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## v2.2.0 - 2022.08.22 09
+* support new environment preset `browser`
+* add `typesSource` to `package.json`
+* big improve `.eslintrc.cjs`. Based on `package.json`.`typesSource` now
+* fix bin bug when init config
+* update packages
+
+
 ## v2.1.1 - 2022.08.18 11
 * fix bin bug when init config
 * update packages
