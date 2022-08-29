@@ -6,6 +6,7 @@ import Chalk from 'chalk';
 import { ensureDirSync } from '../lib/fs-extra.js';
 
 import { dirPackage } from '../lib/dir.js';
+import PKG from '../lib/package.js';
 import C from '../lib/config.js';
 
 import copy from './oper/copy.js';
@@ -51,6 +52,7 @@ export default async function init(envs, force = false) {
 	if(envs.includes('vue') && envs.includes('server')) { envs.push('vue-server'); }
 
 	if(!envs.length) { throw 'empty envs'; }
+	console.log('version: ', Chalk.green(PKG.version));
 	console.log('envs: ', Chalk.green(envs.join(' ')) + '\n');
 
 
@@ -79,6 +81,5 @@ export default async function init(envs, force = false) {
 
 
 	console.log('\nRUN following commands:');
-	console.log(`npm install`);
-	console.log(`npm update`);
+	console.log(Chalk.green(`pnpm update`));
 }

@@ -16,7 +16,6 @@
 	},
 	"main": "./index.js",
 	"dependencies": {
-		"@nuogz/pangu": "^2"
 	},
 	"devDependencies": {
 		"eslint": "^8"

@@ -102,7 +102,7 @@ export default function handleJSON(file, fileSource = file, oper, envs, dirCWD, 
 
 
 	if(oper.isPackage) {
-		const source = readJSONSync(pathFileTarget);
+		const source = readJSONSync(pathFileTarget, { throws: false }) ?? {};
 
 
 		source.dependencies = Object.assign(source.dependencies ?? {}, base.dependencies);
