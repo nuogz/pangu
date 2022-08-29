@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v2.5.1 - 2022.08.30 00
+* republish version from `v2.5.1` to fix `npm pack`
+
+
 ## v2.5.0 - 2022.08.29 15
 * support handle `package.json`'s `files` and `scripts`
 
