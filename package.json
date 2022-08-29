@@ -1,16 +1,20 @@
 {
 	"name": "@nuogz/pangu",
-	"version": "2.2.0",
-	"description": "command line interface for development based on vue.js and Nuogz libraries",
+	"version": "2.3.0",
+	"description": "command line interface for development based on vue.js and Nuogz Library",
 	"author": "Nuogz",
 	"license": "LGPL-3.0-or-later",
-	"main": "./index.js",
-	"bin": "./index.bin.js",
-	"type": "module",
 	"repository": {
 		"type": "git",
 		"url": "github:nuogz/pangu"
 	},
+	"type": "module",
+	"typesSource": [],
+	"engines": {
+		"node": ">=14.18.1"
+	},
+	"main": "./index.js",
+	"bin": "./index.bin.js",
 	"files": [
 		"index.js",
 		"index.bin.js",
@@ -20,9 +24,6 @@
 		"preset/**",
 		"locale/**"
 	],
-	"engines": {
-		"node": ">=14.18.1"
-	},
 	"dependencies": {
 		"@nuogz/hades": "^5.0.5",
 		"@nuogz/poseidon": "^7.0.3",
@@ -32,6 +33,6 @@
 		"moment": "^2.29.4"
 	},
 	"devDependencies": {
-		"eslint": "^8.22.0"
+		"eslint": "^8.23.0"
 	}
 }

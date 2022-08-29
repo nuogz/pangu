@@ -13,89 +13,25 @@
 
 <script setup>
 	import { onMounted } from 'vue';
+	import { faCog } from '@fortawesome/free-solid-svg-icons';
 
-	import { CV } from './lib/plugin/CSSVar.js';
-
-	import Sidebar, { moduleNow, tabs } from './lib/Sidebar.vue';
-
-
-
-	document.title = '$$$title';
+	import CV from '@nuogz/css-var';
+	import Sidebar, { moduleNow, tabs } from '@nuogz/vue-sidebar';
 
 
-	CV.setAll({
-		widthScroll: '0.5rem',
-		heightTopbar: '0rem',
-	});
 
 
-	// onMounted(() => tabs.addIcon('$$$main-module-title', null, '$$$main-module-type', '$$$main-module-slot'));
+	document.title = '$$$html-title';
+
+
+	CV.widthScroll = '0.5rem';
+	CV.heightTopbar = '0rem';
+
+
+	onMounted(() => tabs.add('$$$module-slot', 'icon|title', { title: '$$$module-title', icon: faPerson || '$module-icon' }));
 </script>
 
 <style lang="sass" scoped>
-p-sidebar
-	@apply fixed z-50 shadow-mdd p-1 bg-gray-100
-	width: var(--widthSidebar)
-	height: calc(100% - var(--heightTopbar))
-	top: var(--heightTopbar)
-	background-color: var(--colorMain)
-
-
-	svg[corn]
-			@apply absolute opacity-25 z-10 text-xs top-1 left-1
-
-
-	p-button
-		@apply relative block rounded-md text-center text-xl shadow-mdd mt-2 cursor-pointer outline-none h-8 leading-8
-		width: calc( var(--widthSidebar) - 0.55rem)
-		background-color: var(--colorTextMain)
-		color: var(--colorText)
-
-		&:focus
-			@apply ring-2 ring-yellow-500
-
-		&[profile]
-			@apply font-bold mt-0
-
-		&[expand]
-			@apply overflow-hidden px-1
-
-			&:focus-within
-				@apply overflow-visible w-24 ring-2 ring-yellow-500
-
-			input
-				@apply rounded-md w-full text-center outline-none z-20 bg-transparent
-
-		&[keyword]:focus-within
-			@apply w-48
-
-		&[now]
-			@apply ring-2 ring-pink-400
-
-		p-header
-			@apply relative block rounded-md shadow-md absolute top-1 left-1 bg-cover
-			width: calc(100% - 0.5rem)
-			height: calc(100% - 0.5rem)
-
-
-	p-profiles
-		@apply block p-0.5 pt-0
-
-		p-profile-id
-			@apply relative block rounded-md mt-2 text-center text-xl shadow-mdd cursor-pointer outline-none w-40 elli
-			height: calc( var(--widthSidebar) - 0.55rem)
-			line-height: calc( var(--widthSidebar) - 0.55rem)
-			background-color: var(--colorTextMain)
-			color: var(--colorText)
-
-			&:hover
-				@apply ring-2 ring-green-500
-
-			&[now]
-				@apply font-bold
-
-
-
 p-main
 	margin-top: var(--heightTopbar)
 	margin-left: var(--widthSidebar)

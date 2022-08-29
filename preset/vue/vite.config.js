@@ -24,19 +24,23 @@ export default defineConfig({
 	build: {
 		outDir: resolve(dirPackage, 'dist'),
 		emptyOutDir: true,
-		chunkSizeWarningLimit: 1024
+		chunkSizeWarningLimit: 1024,
+		minify: true
 	},
 	publicDir: resolve(dirPackage, 'src', 'public'),
 	clearScreen: false,
 	server: {
-		port: 47,
+		hmr: {
+			port: 45$$$port-surfix,
+		},
+		port: 47$$$port-surfix,
 		proxy: {
 			'^/api/': {
-				target: 'http://127.0.0.1:147',
+				target: 'http://127.0.0.1:147$$$port-surfix',
 				changeOrigin: true,
 			},
 			'/wock': {
-				target: 'ws://127.0.0.1:147/wock',
+				target: 'ws://127.0.0.1:147$$$port-surfix/wock',
 				ws: true
 			},
 		}

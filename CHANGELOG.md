@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v2.3.0 - 2022.08.29 11
+* decoupling codes. use packages from Nuogz Library
+* improve `package.json` and project configs
+
+
 ## v2.2.0 - 2022.08.22 09
 * support new environment preset `browser`
 * add `typesSource` to `package.json`

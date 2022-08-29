@@ -10,7 +10,9 @@ E = process.E = E.filter(env => env.trim()).reduce((e, env) => {
 	return e;
 }, {});
 
+
 const isExportAll = '*' in E;
+
 
 
 export const dirPackage = (isExportAll || 'dir' in E) ? (await import('./lib/dir.js')).dirPackage : undefined;
