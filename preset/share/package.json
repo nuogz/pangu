@@ -15,8 +15,14 @@
 		"node": ">=14.18.1"
 	},
 	"main": "./index.js",
-	"dependencies": {
-	},
+	"files": [
+		"index.js",
+		"lib/**",
+		"src/**",
+		"locale/**"
+	],
+	"scripts": {},
+	"dependencies": {},
 	"devDependencies": {
 		"eslint": "^8"
 	}

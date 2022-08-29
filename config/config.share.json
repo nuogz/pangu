@@ -10,6 +10,7 @@
 			"type": "handle-json",
 			"isPackage": true,
 			"handles": [
+				"concat-key-value|scripts",
 				"concat-key-value|dependencies",
 				"concat-key-value|devDependencies",
 				"concat-array|typesSource"

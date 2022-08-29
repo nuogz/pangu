@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v2.5.0 - 2022.08.29 15
+* support handle `package.json`'s `files` and `scripts`
+
+
 ## v2.4.0 - 2022.08.29 14
 * fix fatal error when target `package.json` is not created
 * update preset. no longer need to keep `@nuogz/pangu` in the dependencies if it doesn't need
