@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v3.0.3 - 2022.09.02 18
+* fix bug when init `config` params
+* improve slots
+
+
 ## v3.0.2 - 2022.09.02 18
 * fix slots case
 

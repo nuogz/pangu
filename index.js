@@ -6,17 +6,17 @@ const eRaw = (typeof process.env.NENV_PANGU == 'string'
 
 const slotsFunction = {
 	dir: 'dir',
-	pkg: 'pkg',
-	package: 'pkg',
-	cmd: 'cmd',
-	command: 'cmd',
-	cfg: 'cfg',
-	conf: 'cfg',
-	config: 'cfg',
+	pkg: 'package',
+	package: 'package',
+	cmd: 'command',
+	command: 'command',
+	cfg: 'config',
+	conf: 'config',
+	config: 'config',
 	log: 'log',
 	logger: 'log',
-	proc: 'proc',
-	process: 'proc',
+	proc: 'process',
+	process: 'process',
 	moment: 'moment',
 	poseidon: 'Poseidon',
 	hades: 'Hades',
@@ -24,7 +24,7 @@ const slotsFunction = {
 };
 
 
-const E = {};
+const E = process.E = {};
 const NE = new Set();
 
 eRaw.filter(env => env.trim()).forEach(env => {
@@ -44,11 +44,11 @@ eRaw.filter(env => env.trim()).forEach(env => {
 const isExportAll = '*' in E;
 
 const isExportDir = !NE.has('dir') && (isExportAll || 'dir' in E);
-const isExportPackage = !NE.has('pkg') && (isExportAll || 'pkg' in E);
-const isExportCommand = !NE.has('cmd') && (isExportAll || 'cmd' in E);
-const isExportConfig = !NE.has('cfg') && (isExportAll || 'cfg' in E);
+const isExportPackage = !NE.has('package') && (isExportAll || 'package' in E);
+const isExportCommand = !NE.has('command') && (isExportAll || 'command' in E);
+const isExportConfig = !NE.has('config') && (isExportAll || 'config' in E);
 const isExportLog = !NE.has('log') && (isExportAll || 'log' in E);
-const isExportProcess = !NE.has('proc') && (isExportAll || 'proc' in E);
+const isExportProcess = !NE.has('process') && (isExportAll || 'process' in E);
 
 const isExportMoment = !NE.has('moment') && (isExportAll || 'moment' in E);
 const isExportPoseidon = !NE.has('poseidon') && (isExportAll || 'poseidon' in E);
