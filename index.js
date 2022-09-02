@@ -15,12 +15,12 @@ const slotsFunction = {
 	config: 'cfg',
 	log: 'log',
 	logger: 'log',
-	moment: 'moment',
 	proc: 'proc',
 	process: 'proc',
-	Poseidon: 'Poseidon',
-	Hades: 'Hades',
-	Commander: 'Commander',
+	moment: 'moment',
+	poseidon: 'Poseidon',
+	hades: 'Hades',
+	commander: 'Commander',
 };
 
 
@@ -51,9 +51,9 @@ const isExportLog = !NE.has('log') && (isExportAll || 'log' in E);
 const isExportProcess = !NE.has('proc') && (isExportAll || 'proc' in E);
 
 const isExportMoment = !NE.has('moment') && (isExportAll || 'moment' in E);
-const isExportPoseidon = !NE.has('Poseidon') && (isExportAll || 'Poseidon' in E);
-const isExportHades = !NE.has('Hades') && (isExportAll || 'Hades' in E);
-const isExportCommander = !NE.has('Commander') && (isExportAll || 'Commander' in E);
+const isExportPoseidon = !NE.has('poseidon') && (isExportAll || 'poseidon' in E);
+const isExportHades = !NE.has('hades') && (isExportAll || 'hades' in E);
+const isExportCommander = !NE.has('commander') && (isExportAll || 'commander' in E);
 
 
 

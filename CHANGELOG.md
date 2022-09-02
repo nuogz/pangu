@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v3.0.2 - 2022.09.02 18
+* fix slots case
+
+
 ## v3.0.1 - 2022.09.02 18
 * export `Commander`
 
