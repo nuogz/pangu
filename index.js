@@ -20,6 +20,7 @@ const slotsFunction = {
 	process: 'proc',
 	Poseidon: 'Poseidon',
 	Hades: 'Hades',
+	Commander: 'Commander',
 };
 
 
@@ -52,6 +53,7 @@ const isExportProcess = !NE.has('proc') && (isExportAll || 'proc' in E);
 const isExportMoment = !NE.has('moment') && (isExportAll || 'moment' in E);
 const isExportPoseidon = !NE.has('Poseidon') && (isExportAll || 'Poseidon' in E);
 const isExportHades = !NE.has('Hades') && (isExportAll || 'Hades' in E);
+const isExportCommander = !NE.has('Commander') && (isExportAll || 'Commander' in E);
 
 
 
@@ -92,3 +94,4 @@ export const Moment = isExportMoment ? (await import('./lib/moment.js')).default
 
 export const Poseidon = isExportPoseidon ? (await import('@nuogz/poseidon')).default : undefined;
 export const Hades = isExportHades ? (await import('@nuogz/hades')).default : undefined;
+export const Commander = isExportCommander ? (await import('commander/esm.mjs')) : undefined;
