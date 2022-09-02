@@ -1,7 +1,0 @@
-{
-	"files": {
-		"index.js": "copy|server",
-		"config/config.server.json": "copy|server",
-		"src/version.api.js": "copy|server"
-	}
-}

@@ -2,12 +2,24 @@
 ![Version](https://img.shields.io/github/package-json/v/nuogz/pangu?style=flat-square)
 [![License](https://img.shields.io/github/license/nuogz/pangu?style=flat-square)](https://www.gnu.org/licenses/lgpl-3.0-standalone.html)
 
-Command line interface for development based on vue.js and Nuogz Library.
+Unified initialization Library of base environment with Nuogz libraries.
 
-## Usage
-````cmd
-pnpm exec pangu init node
-pnpm exec pangu init server
-pnpm exec pangu init vue
-pnpm exec pangu init vue server
-````
+## Environment Variable
+- `NENV_PANGU`
+- `NENV_PKG_PATH`
+
+## Functions
+### main functions
+- `dir`
+- `package`
+- `command`
+- `config`
+- `log`
+
+### library preinit
+- `process`
+- `moment`
+
+### library export
+- `Hades`
+- `Poseidon`

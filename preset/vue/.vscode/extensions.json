@@ -1,8 +1,0 @@
-{
-	"recommendations": [
-		"dbaeumer.vscode-eslint",
-		"octref.vetur",
-		"bradlc.vscode-tailwindcss",
-		"syler.sass-indented"
-	]
-}
