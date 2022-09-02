@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v3.0.4 - 2022.09.02 18
+* fix bug when export `Commander`
+
+
 ## v3.0.3 - 2022.09.02 18
 * fix bug when init `config` params
 * improve slots

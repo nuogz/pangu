@@ -18,9 +18,9 @@ const slotsFunction = {
 	proc: 'process',
 	process: 'process',
 	moment: 'moment',
-	poseidon: 'Poseidon',
-	hades: 'Hades',
-	commander: 'Commander',
+	poseidon: 'poseidon',
+	hades: 'hades',
+	commander: 'commander',
 };
 
 
