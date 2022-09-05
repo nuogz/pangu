@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v3.1.1 - 2022.09.05 10
+* fix typo code
+
+
 ## v3.1.0 - 2022.09.05 10
 * improve the priorities of `logger` configs
 
