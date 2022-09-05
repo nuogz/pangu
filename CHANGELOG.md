@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v3.1.0 - 2022.09.05 10
+* improve the priorities of `logger` configs
+
+
 ## v3.0.4 - 2022.09.02 18
 * fix bug when export `Commander`
 

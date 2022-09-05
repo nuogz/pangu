@@ -1,6 +1,6 @@
 {
 	"name": "@nuogz/pangu",
-	"version": "3.0.4",
+	"version": "3.1.0",
 	"description": "Unified initialization Library of base environment with Nuogz libraries",
 	"author": "Nuogz",
 	"license": "LGPL-3.0-or-later",
