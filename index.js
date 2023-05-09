@@ -17,7 +17,7 @@ const slotsFunction = {
 	logger: 'log',
 	proc: 'process',
 	process: 'process',
-	moment: 'moment',
+	day: 'day',
 	poseidon: 'poseidon',
 	hades: 'hades',
 	commander: 'commander',
@@ -48,9 +48,10 @@ const isExportPackage = !NE.has('package') && (isExportAll || 'package' in E);
 const isExportCommand = !NE.has('command') && (isExportAll || 'command' in E);
 const isExportConfig = !NE.has('config') && (isExportAll || 'config' in E);
 const isExportLog = !NE.has('log') && (isExportAll || 'log' in E);
-const isExportProcess = !NE.has('process') && (isExportAll || 'process' in E);
 
-const isExportMoment = !NE.has('moment') && (isExportAll || 'moment' in E);
+const isExportProcess = !NE.has('process') && (isExportAll || 'process' in E);
+const isExportDay = !NE.has('day') && (isExportAll || 'day' in E);
+
 const isExportPoseidon = !NE.has('poseidon') && (isExportAll || 'poseidon' in E);
 const isExportHades = !NE.has('hades') && (isExportAll || 'hades' in E);
 const isExportCommander = !NE.has('commander') && (isExportAll || 'commander' in E);
@@ -88,10 +89,11 @@ export const G = isExportLog ? (await import('./lib/log.js')).default : undefine
 if(isExportProcess) { await import('./lib/process.js'); }
 
 
-export const Moment = isExportMoment ? (await import('./lib/moment.js')).default : undefined;
+export const Day = isExportDay ? (await import('./lib/day.js')).default : undefined;
 
 
 
 export const Poseidon = isExportPoseidon ? (await import('@nuogz/poseidon')).default : undefined;
 export const Hades = isExportHades ? (await import('@nuogz/hades')).default : undefined;
+/** @type {import('commander')} */
 export const Commander = isExportCommander ? (await import('commander/esm.mjs')) : undefined;

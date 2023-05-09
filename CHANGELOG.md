@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v4.0.0. - 2023.05.09 18
+* (break) use `day.js` instead `moment.js`
+* add `d.ts` and renew related code
+* bump up dependencies
+
+
 ## v3.1.2 - 2022.09.05 10
 * fix typo code
 

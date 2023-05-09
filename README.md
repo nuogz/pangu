@@ -2,7 +2,7 @@
 ![Version](https://img.shields.io/github/package-json/v/nuogz/pangu?style=flat-square)
 [![License](https://img.shields.io/github/license/nuogz/pangu?style=flat-square)](https://www.gnu.org/licenses/lgpl-3.0-standalone.html)
 
-Unified initialization Library of base environment with Nuogz libraries.
+Unified base environment library using Nuogz libraries
 
 ## Environment Variable
 - `NENV_PANGU`
@@ -16,10 +16,11 @@ Unified initialization Library of base environment with Nuogz libraries.
 - `config`
 - `log`
 
-### library preinit
+### library useful pre-init
 - `process`
-- `moment`
+- `day`
 
 ### library export
 - `Hades`
 - `Poseidon`
+- `Commander`
