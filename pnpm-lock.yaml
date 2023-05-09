@@ -2,11 +2,11 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@nuogz/hades':
-    specifier: ^6.0.2
-    version: 6.0.2
+    specifier: ^6.0.3
+    version: 6.0.3
   '@nuogz/poseidon':
-    specifier: ^8.0.0
-    version: 8.0.0
+    specifier: ^8.0.1
+    version: 8.0.1
   '@nuogz/utility':
     specifier: ^1.6.5
     version: 1.6.5
@@ -115,8 +115,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@nuogz/hades@6.0.2:
-    resolution: {integrity: sha512-EfRBKQerUKa9bHLBwgy6DuCSS/wAYkMT2G6Ds0IKE1dfnr9JEMW9NLym/zbD6iEobRcK2nJ8vtxPH5Z+YdaXsg==}
+  /@nuogz/hades@6.0.3:
+    resolution: {integrity: sha512-ivFzplY5rGSolnl0366o6Czbcodm6dATYFB9/soq5JqLfXyLBJETk7JyUD412w3BLX4Bj6vNbkFw4Hcpy9oYxw==}
     engines: {node: '>=14.18.1'}
     dependencies:
       '@nuogz/i18n': 3.1.0
@@ -144,8 +144,8 @@ packages:
       '@nuogz/i18n': 3.1.0
     dev: false
 
-  /@nuogz/poseidon@8.0.0:
-    resolution: {integrity: sha512-fWmXYbhSO6yMCkERWPVzsqwfQVR6BABpH/L5IhU2IRbYBkk8yeAhfYWH5wkFcLXNNf8X/5TNjUJIkDj/hzAOsg==}
+  /@nuogz/poseidon@8.0.1:
+    resolution: {integrity: sha512-5ABne5bK/Us6mDg5vyL3IoiR+o7Ydgf0F3WHUvZ9/XFV7UN6EfsfpZ9W0kNC0tPSbzDwAOfx/I+PbkEKTfysQQ==}
     engines: {node: '>=14.18.1'}
     dependencies:
       '@nuogz/i18n': 3.1.0

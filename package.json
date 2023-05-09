@@ -1,6 +1,6 @@
 {
 	"name": "@nuogz/pangu",
-	"version": "4.0.0",
+	"version": "4.0.1",
 	"description": "Unified base environment library using Nuogz libraries",
 	"author": "Nuogz",
 	"license": "LGPL-3.0-or-later",
@@ -23,8 +23,8 @@
 		"emitDeclaration": "tsc ./index.js --declaration --emitDeclarationOnly --allowJs --moduleResolution nodenext --module esnext --target esnext --experimentalDecorators"
 	},
 	"dependencies": {
-		"@nuogz/hades": "^6.0.2",
-		"@nuogz/poseidon": "^8.0.0",
+		"@nuogz/hades": "^6.0.3",
+		"@nuogz/poseidon": "^8.0.1",
 		"@nuogz/utility": "^1.6.5",
 		"commander": "^10.0.1",
 		"dayjs": "^1.11.7"
