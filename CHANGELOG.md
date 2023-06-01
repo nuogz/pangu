@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## v4.0.2 - 2023.06.01 10
+* fix peerDependencies bug
+* bump up dependencies
+* use eslint flat config, and related config udpate
+	* use `eslint.config.js` instead `eslintrc.cjs`
+
+
 ## v4.0.1 - 2023.05.09 19
 * fix `package.json`
 
