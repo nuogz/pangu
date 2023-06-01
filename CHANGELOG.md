@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v4.1.0 - 2023.06.01 10
+* (new) `command` support for preprocessing custom commands via the `process.preloadCommand` function
+
+
 ## v4.0.2 - 2023.06.01 10
 * fix peerDependencies bug
 * bump up dependencies
