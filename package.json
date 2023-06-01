@@ -8,7 +8,9 @@
 		"type": "git",
 		"url": "github:nuogz/pangu"
 	},
-	"typesSource": [],
+	"typesSource": [
+		"node"
+	],
 	"type": "module",
 	"engines": {
 		"node": ">=14.18.1"
