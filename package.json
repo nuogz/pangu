@@ -1,17 +1,19 @@
 {
 	"name": "@nuogz/pangu",
-	"version": "4.1.0",
+	"version": "4.2.0",
 	"description": "Unified base environment library using Nuogz libraries",
-	"author": "Nuogz",
+	"author": "DanoR",
 	"license": "LGPL-3.0-or-later",
 	"repository": {
 		"type": "git",
 		"url": "github:nuogz/pangu"
 	},
+	"private": false,
+	"type": "module",
 	"typesSource": [
 		"node"
 	],
-	"type": "module",
+	"sideEffects": false,
 	"engines": {
 		"node": ">=14.18.1"
 	},
@@ -21,20 +23,21 @@
 		"lib/**",
 		"**/*.d.ts"
 	],
+	"typings": "./index.d.ts",
 	"scripts": {
-		"emitDeclaration": "tsc ./index.js --declaration --emitDeclarationOnly --allowJs --moduleResolution nodenext --module esnext --target esnext --experimentalDecorators"
+		"emitDeclaration": "tsc ./index.js --declaration --emitDeclarationOnly --moduleResolution nodenext --module nodenext --target esnext --experimentalDecorators --strict --allowJs --jsx preserve"
 	},
 	"dependencies": {
-		"@nuogz/hades": "^6.0.3",
-		"@nuogz/json-bigint": "^1.3.0",
-		"@nuogz/poseidon": "^8.0.1",
-		"@nuogz/utility": "^1.7.1",
-		"commander": "^10.0.1",
-		"dayjs": "^1.11.7"
+		"@nuogz/hades": "^6.1.0",
+		"@nuogz/json-bigint": "^1.3.1",
+		"@nuogz/poseidon": "^8.1.0",
+		"@nuogz/utility": "^1.8.1",
+		"commander": "^11.1.0",
+		"dayjs": "^1.11.10"
 	},
 	"devDependencies": {
-		"@types/node": "^20.2.5",
-		"eslint": "^8.41.0",
-		"typescript": "^5.0.4"
+		"@types/node": "^20.10.3",
+		"eslint": "^8.55.0",
+		"typescript": "^5.3.3"
 	}
 }

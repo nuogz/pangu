@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v4.2.0 - 2023.12.07 14
+* bump up `commander` to `v11.x`
+* tweak enviroment
+* bump up dependencies
+
+
 ## v4.1.0 - 2023.06.01 10
 * (new) `command` support for preprocessing custom commands via the `process.preloadCommand` function
 
