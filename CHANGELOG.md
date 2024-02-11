@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v4.3.0 - 2024.02.11 16
+* can pass environment parameters via `import.meta.url` now
+* bump up dependencies
+
 ## v4.2.0 - 2023.12.07 14
 * bump up `commander` to `v11.x`
 * tweak enviroment

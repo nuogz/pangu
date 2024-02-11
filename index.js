@@ -1,9 +1,3 @@
-const eRaw = (typeof process.env.NENV_PANGU == 'string'
-	? process.env.NENV_PANGU.split(';')
-	: process.env.NENV_PANGU)
-	?? [];
-
-
 const slotsFunction = {
 	dir: 'dir',
 	pkg: 'package',
@@ -24,21 +18,44 @@ const slotsFunction = {
 };
 
 
+
+const environmentsProcess = (process.env.NENV_PANGU?.split(';') ?? process.env.NENV_PANGU ?? []).filter(env => env.trim())
+	.map(env => {
+		const [targetRaw, paramsRaw = ''] = env.split(':');
+		const target = targetRaw.replace(/^-/, '').toLowerCase();
+
+		return {
+			slot: slotsFunction[target] ?? target,
+			params: paramsRaw.split(',').filter(param => param.trim()),
+			excluded: targetRaw.startsWith('-')
+		};
+	});
+
+const entriesQuery = [...new URL(import.meta.url).searchParams.entries()];
+
+const environmentsQuery = entriesQuery
+	.map(env => {
+		const [targetRaw, paramsRaw = ''] = env;
+		const target = targetRaw.replace(/^-/, '').toLowerCase();
+
+		return {
+			slot: slotsFunction[target] ?? target,
+			params: paramsRaw.split(',').filter(param => param.trim()),
+			excluded: targetRaw.startsWith('-')
+		};
+	});
+
+const environments = environmentsQuery.length ? environmentsQuery : environmentsProcess;
+
+
 const E = process.E = {};
 const NE = new Set();
 
-eRaw.filter(env => env.trim()).forEach(env => {
-	const [targetRaw, paramsRaw = ''] = env.split(':');
-	const target = targetRaw.replace(/^-/, '').toLowerCase();
-
-	const slot = slotsFunction[target] ?? target;
-
-
-	if(targetRaw.startsWith('-')) { return NE.add(slot); }
-
-
-	E[slot] = paramsRaw.split(',').filter(param => param.trim());
+environments.forEach(({ slot, params, excluded }) => {
+	if(!excluded) { E[slot] = params; }
+	else { NE.add(slot); }
 });
+
 
 
 const isExportAll = '*' in E;
