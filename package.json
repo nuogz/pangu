@@ -21,6 +21,7 @@
 	"files": [
 		"index.js",
 		"lib/**",
+		"util/**",
 		"**/*.d.ts"
 	],
 	"typings": "./index.d.ts",
