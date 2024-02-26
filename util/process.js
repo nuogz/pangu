@@ -1,7 +1,11 @@
-import G from './log.js';
-import PKG from './package.js';
+export default function init(launcher, environment, $pangu) {
+	const { package: PKG, log = globalThis.console } = environment;
 
 
+	process.title = PKG.name;
 
-process.title = PKG.name;
-process.on('unhandledRejection', (error, promise) => { G.fatal('进程', '未处理的拒绝', error); });
+	process.on('unhandledRejection', (error, promise) => { log?.fatal('进程', '未处理的拒绝', error); });
+
+
+	return process;
+}

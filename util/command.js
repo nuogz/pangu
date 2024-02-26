@@ -1,34 +1,37 @@
-import { Command } from 'commander/esm.mjs';
-
-import PKG from './package.js';
+// import { Command } from 'commander/esm.mjs';
 
 
-/** @type {import('commander').Command} */
-export const CMD = new Command().allowUnknownOption();
+export default async function init(launcher, environment, $pangu) {
+	// const { package: PKG } = environment;
 
 
-CMD.version(PKG.version);
-
-CMD.option('-cd, --config-dir <dirConfig>', 'config DIR');
-
-CMD.option('--log-dir <dirLog>', 'log DIR');
-CMD.option('--log-locale <localeName>', 'log locale');
-CMD.option('--log-name <nameLog>', 'log name');
-CMD.option('--log-level <levelLog>', 'log level');
+	// /** @type {import('commander').Command} */
+	// const CMD = new Command().allowUnknownOption();
 
 
-const resultCommand = {};
-if(typeof process.preloadCommand == 'function') { await process.preloadCommand(CMD, resultCommand); }
+	// CMD.version(PKG.version);
+
+	// CMD.option('-cd, --config-dir <dirConfig>', 'config DIR');
+
+	// CMD.option('--log-dir <dirLog>', 'log DIR');
+	// CMD.option('--log-locale <localeName>', 'log locale');
+	// CMD.option('--log-name <nameLog>', 'log name');
+	// CMD.option('--log-level <levelLog>', 'log level');
 
 
-CMD.parse(process.argv);
+	// const resultCommand = {};
+	// if(typeof process.preloadCommand == 'function') { await process.preloadCommand(CMD, resultCommand); }
 
 
-const O = CMD.opts();
-
-O.CMD = CMD;
-
-for(const key of Object.keys(resultCommand)) { O[key] = resultCommand[key]; }
+	// CMD.parse(process.argv);
 
 
-export default O;
+	// const O = CMD.opts();
+
+	// O.CMD = CMD;
+
+	// for(const key of Object.keys(resultCommand)) { O[key] = resultCommand[key]; }
+
+
+	// return O;
+}

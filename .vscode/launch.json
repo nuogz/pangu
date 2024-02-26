@@ -13,6 +13,36 @@
 			"runtimeExecutable": "node",
 			"program": "${fileBasename}",
 			"args": []
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Mocha Current Test",
+			"console": "integratedTerminal",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"cwd": "${fileDirname}",
+			"runtimeExecutable": "npx",
+			"program": "mocha",
+			"args": [
+				"${file}",
+			]
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Mocha All Tests",
+			"console": "integratedTerminal",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"cwd": "${workspaceFolder}/test",
+			"runtimeExecutable": "npx",
+			"program": "mocha",
+			"args": [
+				"*.test.js",
+			]
 		}
 	]
 }

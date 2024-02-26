@@ -1,11 +1,15 @@
 # CHANGELOG
 
+## v5.0.0 - 2024.02.26 11
+* (new)(break) HUGE refactor! See full usages on [REAME](README.md)
+
+
 ## v4.3.1 - 2024.02.11 16
-* Current Working Directory is now the default for `dirPackage`
+* (new) Current Working Directory is now the default for `dirPackage`
 
 
 ## v4.3.0 - 2024.02.11 16
-* can pass environment parameters via `import.meta.url` now
+* (new) can pass environment parameters via `import.meta.url` now
 * bump up dependencies
 
 

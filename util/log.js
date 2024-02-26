@@ -1,27 +1,29 @@
-import { resolve } from 'path';
+import { parse, resolve } from 'path';
 
 import { copyJSON } from '@nuogz/utility';
 import Hades from '@nuogz/hades';
 
-import { dirPackage } from './dir.js';
-import PKG from './package.js';
-import O from './command.js';
-import C from './config.js';
 
 
+export default function init(launcher, environment, $pangu) {
+	const { dir: dirWorking, package: PKG, config } = environment;
 
-const env = process.env;
+	const name = launcher.params.name?.[0] || launcher.params.default?.[0] || process.env.NENV_HADES_NAME || PKG.name;
+	const level = launcher.params.level?.[0] || launcher.params.default?.[1] || config.log?.level;
 
-const name = O.logName ?? C.log?.name ?? env.NENV_HADES_NAME ?? PKG.name;
-const level = O.logLevel ?? C.log?.level ?? env.NENV_HADES_LEVEL;
-const dirLog = O.logDir ?? env.NENV_HADES_DIR ?? resolve(dirPackage, 'log');
+	const dirLog = resolve(
+		launcher.params.dir?.[0]
+			?.replace(/(?<!\\)<entry(?<!\\)>/g, parse(process.argv[1]).dir).replace(/\\([<>])/g, '$1')
+			?.replace(/(?<!\\)<cwd(?<!\\)>/g, process.cwd()).replace(/\\([<>])/g, '$1') ||
+		process.env.NENV_HADES_DIR ||
+		resolve(dirWorking, 'log')
+	);
+
+	const option = copyJSON(config.log ?? {});
 
 
-const option = copyJSON(C.log ?? {});
+	const G = new Hades(name, level, dirLog, option);
 
 
-const G = new Hades(name, level, dirLog, option);
-
-
-
-export default G;
+	return G;
+}

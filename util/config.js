@@ -1,19 +1,23 @@
-import { resolve } from 'path';
+import { parse, resolve } from 'path';
 
 import Poseidon from '@nuogz/poseidon';
 
-import { dirPackage } from './dir.js';
-import O from './command.js';
 
 
+export default function init(launcher, environment, $pangu) {
+	const dirConfig = resolve(
+		launcher.params.dir?.[0]
+			?.replace(/(?<!\\)<entry(?<!\\)>/g, parse(process.argv[1]).dir).replace(/\\([<>])/g, '$1')
+			?.replace(/(?<!\\)<cwd(?<!\\)>/g, process.cwd()).replace(/\\([<>])/g, '$1') ||
+		resolve(environment.dir, 'config')
+	);
 
-const dirConfig = O['config-dir'] ?? resolve(dirPackage, 'config');
+
+	const config = new Poseidon(dirConfig, launcher.params.default?.join(','));
 
 
-const params = process.E.config ?? [];
-
-const C = new Poseidon(dirConfig, params.join(','));
+	environment.config = config;
 
 
-
-export default C;
+	return config;
+}
