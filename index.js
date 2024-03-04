@@ -38,6 +38,28 @@ if('$pangu' in globalThis == false) {
 		},
 		subs$urlImport: {},
 		utils$name: {},
+		utilsExport: {
+			i18nDefault: void 0,
+			i18ns$alias: {},
+			dirDefault: void 0,
+			dirs$alias: {},
+			packageDefault: void 0,
+			packages$alias: {},
+			commandDefault: void 0,
+			commands$alias: {},
+			configDefault: void 0,
+			configs$alias: {},
+			logDefault: void 0,
+			logDefaultSub: globalThis.console,
+			logs$alias: {},
+
+			processDefault: void 0,
+			DayDefault: void 0,
+			PoseidonDefault: void 0,
+			HadesDefault: void 0,
+			CommanderDefault: void 0,
+		},
+		promisesWait: [],
 	};
 }
 const $pangu = globalThis.$pangu;
@@ -46,7 +68,7 @@ const $pangu = globalThis.$pangu;
 const urlImport = import.meta.url;
 
 
-const { utils$name, orders$util, utils$short } = $pangu;
+const { utils$name, orders$util, utils$short, utilsExport } = $pangu;
 const subScoped = $pangu.subs$urlImport[urlImport] = {
 	launchers$name: {},
 	environments$space: {},
@@ -96,82 +118,43 @@ parseParamString(import.meta.url);
  */
 
 
-/** @type {I18NResult} */
-let i18nDefault;
-/** @type {Object<string, I18NResult>} */
-const i18ns$alias = {};
-/** @type {string} */
-let dirDefault;
-/** @type {Object<string, string>} */
-const dirs$alias = {};
-/** @type {Object} */
-let packageDefault;
-/** @type {Object<string, Object>} */
-const packages$alias = {};
-/** @type {import('commander').OptionValues} */
-let commandDefault;
-/** @type {Object<string, import('commander').OptionValues>} */
-const commands$alias = {};
-/** @type {import('@nuogz/poseidon').default} */
-let configDefault;
-/** @type {Object<string, import('@nuogz/poseidon').default>} */
-const configs$alias = {};
-/** @type {import('@nuogz/hades').default} */
-let logDefault;
-/** @type {import('@nuogz/hades').default | typeof globalThis.console} */
-let logDefaultSub = globalThis.console;
-/** @type {Object<string, import('@nuogz/hades').default>} */
-const logs$alias = {};
-
-/** @type {typeof globalThis.process} */
-let processDefault;
-/** @type {import('dayjs').Dayjs} */
-let DayDefault;
-/** @type {import('@nuogz/poseidon').default} */
-let PoseidonDefault;
-/** @type {import('@nuogz/hades').default} */
-let HadesDefault;
-/** @type {import('commander').Command} */
-let CommanderDefault;
-
-
 const exportUtil = (util, launcher) => {
 	if(launcher.util == 'i18n') {
-		i18ns$alias[launcher.alias] = util;
+		utilsExport.i18ns$alias[launcher.alias] = util;
 
-		if(launcher.alias == '') { i18nDefault = util; }
+		if(launcher.alias == '') { utilsExport.i18nDefault = util; }
 	}
 	if(launcher.util == 'dir') {
-		dirs$alias[launcher.alias] = util;
+		utilsExport.dirs$alias[launcher.alias] = util;
 
-		if(launcher.alias == '') { dirDefault = util; }
+		if(launcher.alias == '') { utilsExport.dirDefault = util; }
 	}
 	if(launcher.util == 'package') {
-		packages$alias[launcher.alias] = util;
+		utilsExport.packages$alias[launcher.alias] = util;
 
-		if(launcher.alias == '') { packageDefault = util; }
+		if(launcher.alias == '') { utilsExport.packageDefault = util; }
 	}
 	if(launcher.util == 'command') {
-		commands$alias[launcher.alias] = util;
+		utilsExport.commands$alias[launcher.alias] = util;
 
-		if(launcher.alias == '') { commandDefault = util; }
+		if(launcher.alias == '') { utilsExport.commandDefault = util; }
 	}
 	if(launcher.util == 'config') {
-		configs$alias[launcher.alias] = util;
+		utilsExport.configs$alias[launcher.alias] = util;
 
-		if(launcher.alias == '') { configDefault = util; }
+		if(launcher.alias == '') { utilsExport.configDefault = util; }
 	}
 	if(launcher.util == 'log') {
-		logs$alias[launcher.alias] = util;
+		utilsExport.logs$alias[launcher.alias] = util;
 
-		if(launcher.alias == '') { logDefault = util; logDefaultSub = util; }
+		if(launcher.alias == '') { utilsExport.logDefault = util; utilsExport.logDefaultSub = util; }
 	}
 
-	if(launcher.util == 'process') { processDefault = util; }
-	if(launcher.util == 'day') { DayDefault = util; }
-	if(launcher.util == 'poseidon') { PoseidonDefault = util; }
-	if(launcher.util == 'hades') { HadesDefault = util; }
-	if(launcher.util == 'commander') { CommanderDefault = util; }
+	if(launcher.util == 'process') { utilsExport.processDefault = util; }
+	if(launcher.util == 'day') { utilsExport.DayDefault = util; }
+	if(launcher.util == 'poseidon') { utilsExport.PoseidonDefault = util; }
+	if(launcher.util == 'hades') { utilsExport.HadesDefault = util; }
+	if(launcher.util == 'commander') { utilsExport.CommanderDefault = util; }
 };
 
 
@@ -245,8 +228,7 @@ const initUtil = async (launcher, environment) => {
 	return util;
 };
 
-
-const promisesWait = [];
+const promisesWait = $pangu.promisesWait;
 for(const launcher of Object.values(launchers$name).sort(({ util: a }, { util: b }) => (orders$util[a] ?? 9999) - (orders$util[b] ?? 9999))) {
 	const environment = environments$space[launcher.space] ?? (environments$space[launcher.space] = { $imported: {} });
 
@@ -276,6 +258,47 @@ for(const launcher of Object.values(launchers$name).sort(({ util: a }, { util: b
 }
 
 await Promise.all(promisesWait);
+
+
+
+/** @type {I18NResult} */
+const i18nDefault = utilsExport.i18nDefault;
+/** @type {Object<string, I18NResult>} */
+const i18ns$alias = utilsExport.i18ns$alias;
+/** @type {string} */
+const dirDefault = utilsExport.dirDefault;
+/** @type {Object<string, string>} */
+const dirs$alias = utilsExport.dirs$alias;
+/** @type {Object} */
+const packageDefault = utilsExport.packageDefault;
+/** @type {Object<string, Object>} */
+const packages$alias = utilsExport.packages$alias;
+/** @type {import('commander').OptionValues} */
+const commandDefault = utilsExport.commandDefault;
+/** @type {Object<string, import('commander').OptionValues>} */
+const commands$alias = utilsExport.commands$alias;
+/** @type {import('@nuogz/poseidon').default} */
+const configDefault = utilsExport.configDefault;
+/** @type {Object<string, import('@nuogz/poseidon').default>} */
+const configs$alias = utilsExport.configs$alias;
+/** @type {import('@nuogz/hades').default} */
+const logDefault = utilsExport.logDefault;
+/** @type {import('@nuogz/hades').default | typeof globalThis.console} */
+const logDefaultSub = utilsExport.logDefaultSub;
+/** @type {Object<string, import('@nuogz/hades').default>} */
+const logs$alias = utilsExport.logs$alias;
+
+/** @type {typeof globalThis.process} */
+const processDefault = utilsExport.processDefault;
+/** @type {import('dayjs').Dayjs} */
+const DayDefault = utilsExport.DayDefault;
+/** @type {import('@nuogz/poseidon').default} */
+const PoseidonDefault = utilsExport.PoseidonDefault;
+/** @type {import('@nuogz/hades').default} */
+const HadesDefault = utilsExport.HadesDefault;
+/** @type {import('commander').Command} */
+const CommanderDefault = utilsExport.CommanderDefault;
+
 
 
 export {

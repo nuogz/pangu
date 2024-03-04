@@ -114,7 +114,7 @@ Therefore, I do not recommend any user to use this library unless they have full
     - 启用`配置`组件
     - 启用名为sms的`配置`组件
 #### 示例：组件空间
-  - `config::aaa&config:sms:vvv`
+  - `config:aaa&config:sms:vvv`
     - 在aaa环境下，启用`配置`组件
     - 在vvv环境下，启用sms`配置`组件
 #### 示例：综合应用

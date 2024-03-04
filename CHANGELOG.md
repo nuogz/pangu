@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v5.1.0 - 2024.03.04 10
+* (new) utils that have already been inited will be exported now by default
+
+
 ## v5.0.0 - 2024.02.26 11
 * (new)(break) HUGE refactor! See full usages on [REAME](README.md)
 
