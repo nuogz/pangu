@@ -213,7 +213,7 @@ const initUtil = async (launcher, environment) => {
 	}
 
 	if(launcher.util == 'poseidon') {
-		util = environment.$imported[launcher.util] ? environment.Poseidon : (environment.Poseidon = (await import('@nuogz/poseidon')).default);
+		util = environment.$imported[launcher.util] ? environment.Poseidon : (environment.Poseidon = (await import('@nuogz/poseidon')).Poseidon);
 	}
 	if(launcher.util == 'hades') {
 		util = environment.$imported[launcher.util] ? environment.Hades : (environment.Hades = (await import('@nuogz/hades')).default);
@@ -277,9 +277,9 @@ const packages$alias = utilsExport.packages$alias;
 const commandDefault = utilsExport.commandDefault;
 /** @type {Object<string, import('commander').OptionValues>} */
 const commands$alias = utilsExport.commands$alias;
-/** @type {import('@nuogz/poseidon').default} */
+/** @type {import('@nuogz/poseidon').PoseidonInterface} */
 const configDefault = utilsExport.configDefault;
-/** @type {Object<string, import('@nuogz/poseidon').default>} */
+/** @type {Object<string, import('@nuogz/poseidon').PoseidonInterface>} */
 const configs$alias = utilsExport.configs$alias;
 /** @type {import('@nuogz/hades').default} */
 const logDefault = utilsExport.logDefault;
@@ -292,7 +292,7 @@ const logs$alias = utilsExport.logs$alias;
 const processDefault = utilsExport.processDefault;
 /** @type {import('dayjs').Dayjs} */
 const DayDefault = utilsExport.DayDefault;
-/** @type {import('@nuogz/poseidon').default} */
+/** @type {import('@nuogz/poseidon').PoseidonInterface} */
 const PoseidonDefault = utilsExport.PoseidonDefault;
 /** @type {import('@nuogz/hades').default} */
 const HadesDefault = utilsExport.HadesDefault;

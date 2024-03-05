@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v5.1.1 - 2024.03.06 01
+* bump up `@nuogz/poseidon` to `v8.2.0`
+	* export `PoseidonInterface` from `@nuogz/poseidon` for extendable `d.ts`
+
+
 ## v5.1.0 - 2024.03.04 10
 * (new) utils that have already been inited will be exported now by default
 

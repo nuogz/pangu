@@ -32,11 +32,11 @@ declare const commandDefault: import('commander').OptionValues;
 declare const commands$alias: {
     [x: string]: import('commander').OptionValues;
 };
-/** @type {import('@nuogz/poseidon').default} */
-declare const configDefault: import('@nuogz/poseidon').default;
-/** @type {Object<string, import('@nuogz/poseidon').default>} */
+/** @type {import('@nuogz/poseidon').PoseidonInterface} */
+declare const configDefault: import('@nuogz/poseidon').PoseidonInterface;
+/** @type {Object<string, import('@nuogz/poseidon').PoseidonInterface>} */
 declare const configs$alias: {
-    [x: string]: import('@nuogz/poseidon').default;
+    [x: string]: import('@nuogz/poseidon').PoseidonInterface;
 };
 /** @type {import('@nuogz/hades').default} */
 declare const logDefault: import('@nuogz/hades').default;
@@ -50,10 +50,14 @@ declare const logs$alias: {
 declare const processDefault: typeof globalThis.process;
 /** @type {import('dayjs').Dayjs} */
 declare const DayDefault: import('dayjs').Dayjs;
-/** @type {import('@nuogz/poseidon').default} */
-declare const PoseidonDefault: import('@nuogz/poseidon').default;
+/** @type {import('@nuogz/poseidon').PoseidonInterface} */
+declare const PoseidonDefault: import('@nuogz/poseidon').PoseidonInterface;
 /** @type {import('@nuogz/hades').default} */
 declare const HadesDefault: import('@nuogz/hades').default;
 /** @type {import('commander').Command} */
 declare const CommanderDefault: import('commander').Command;
 export { i18nDefault as i18n, i18ns$alias as i18ns, dirDefault as dirWorking, dirs$alias as dirsWorking, packageDefault as PKG, packages$alias as packages, commandDefault as O, commands$alias as commands, configDefault as C, configs$alias as configs, logDefault as G, logDefaultSub as GG, logs$alias as logs, processDefault as process, DayDefault as Day, PoseidonDefault as Poseidon, HadesDefault as Hades, CommanderDefault as Commander };
+
+
+import { PoseidonInterface } from '@nuogz/poseidon';
+export { PoseidonInterface }

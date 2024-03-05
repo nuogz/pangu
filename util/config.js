@@ -1,6 +1,6 @@
 import { parse, resolve } from 'path';
 
-import Poseidon from '@nuogz/poseidon';
+import { Poseidon } from '@nuogz/poseidon';
 
 
 
