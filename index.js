@@ -158,6 +158,44 @@ const exportUtil = (util, launcher) => {
 };
 
 
+
+const parseLocalesSystem = () => {
+	const partsLocale = Intl.DateTimeFormat().resolvedOptions().locale.split('-');
+
+	return partsLocale.reduce((acc, cur, index) => (
+		acc.push(partsLocale.slice(0, index + 1).join('-').toLowerCase()),
+		acc
+	), []).join(';');
+};
+
+
+const initI18NUtil = (launcher, environment, $pangu) => {
+	const localeSystem = parseLocalesSystem();
+
+
+	const locale =
+		launcher.params.locale?.join(';').replace(/(?<!\\)<sys(?<!\\)>/g, localeSystem).replace(/\\([<>])/g, '$1') ||
+		launcher.params.default?.[0] ||
+		localeSystem;
+
+	const format = launcher.params.format?.[0] ||
+		launcher.params.default?.[1] ||
+		'hades';
+
+
+	environment.locale = locale;
+	environment.format = format;
+
+
+	process.env.NENV_I18N_LOCALE = locale;
+	process.env.NENV_I18N_FORMAT = format;
+
+
+	return { locale, format };
+};
+
+
+
 const initDefaultUtil = async (util, space, environment) => {
 	const launcher = util in launchers$name ? launchers$name[util] : (launchers$name[util] = {
 		name: util, util, alias: '', space,
@@ -174,7 +212,7 @@ const initUtil = async (launcher, environment) => {
 
 	let util;
 	if(launcher.util == 'i18n') {
-		util = (await import('./util/i18n.js')).default(launcher, environment, $pangu);
+		util = initI18NUtil(launcher, environment, $pangu);
 	}
 	if(launcher.util == 'dir') {
 		util = (await import('./util/dir.js')).default(launcher, environment, $pangu);

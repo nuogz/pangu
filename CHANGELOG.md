@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v5.1.2 - 2024.03.06 01
+* move `i18n` from util folder to `index.js`, for higher and more proper initialisation priority
+
+
 ## v5.1.1 - 2024.03.06 01
 * bump up `@nuogz/poseidon` to `v8.2.0`
 	* export `PoseidonInterface` from `@nuogz/poseidon` for extendable `d.ts`
