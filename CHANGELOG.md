@@ -1,12 +1,17 @@
 # CHANGELOG
 
+## v5.1.3 - 2024.03.06 01
+* improve the logic of exporting utils
+  * to ensure that utils initialised by other utils can also be exported
+
+
 ## v5.1.2 - 2024.03.06 01
 * move `i18n` from util folder to `index.js`, for higher and more proper initialisation priority
 
 
 ## v5.1.1 - 2024.03.06 01
 * bump up `@nuogz/poseidon` to `v8.2.0`
-	* export `PoseidonInterface` from `@nuogz/poseidon` for extendable `d.ts`
+  * export `PoseidonInterface` from `@nuogz/poseidon` for extendable `d.ts`
 
 
 ## v5.1.0 - 2024.03.04 10
@@ -40,7 +45,7 @@
 * fix peerDependencies bug
 * bump up dependencies
 * use eslint flat config, and related config udpate
-	* use `eslint.config.js` instead `eslintrc.cjs`
+  * use `eslint.config.js` instead `eslintrc.cjs`
 
 
 ## v4.0.1 - 2023.05.09 19

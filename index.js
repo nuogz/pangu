@@ -124,37 +124,37 @@ const exportUtil = (util, launcher) => {
 
 		if(launcher.alias == '') { utilsExport.i18nDefault = util; }
 	}
-	if(launcher.util == 'dir') {
+	else if(launcher.util == 'dir') {
 		utilsExport.dirs$alias[launcher.alias] = util;
 
 		if(launcher.alias == '') { utilsExport.dirDefault = util; }
 	}
-	if(launcher.util == 'package') {
+	else if(launcher.util == 'package') {
 		utilsExport.packages$alias[launcher.alias] = util;
 
 		if(launcher.alias == '') { utilsExport.packageDefault = util; }
 	}
-	if(launcher.util == 'command') {
+	else if(launcher.util == 'command') {
 		utilsExport.commands$alias[launcher.alias] = util;
 
 		if(launcher.alias == '') { utilsExport.commandDefault = util; }
 	}
-	if(launcher.util == 'config') {
+	else if(launcher.util == 'config') {
 		utilsExport.configs$alias[launcher.alias] = util;
 
 		if(launcher.alias == '') { utilsExport.configDefault = util; }
 	}
-	if(launcher.util == 'log') {
+	else if(launcher.util == 'log') {
 		utilsExport.logs$alias[launcher.alias] = util;
 
 		if(launcher.alias == '') { utilsExport.logDefault = util; utilsExport.logDefaultSub = util; }
 	}
 
-	if(launcher.util == 'process') { utilsExport.processDefault = util; }
-	if(launcher.util == 'day') { utilsExport.DayDefault = util; }
-	if(launcher.util == 'poseidon') { utilsExport.PoseidonDefault = util; }
-	if(launcher.util == 'hades') { utilsExport.HadesDefault = util; }
-	if(launcher.util == 'commander') { utilsExport.CommanderDefault = util; }
+	else if(launcher.util == 'process') { utilsExport.processDefault = util; }
+	else if(launcher.util == 'day') { utilsExport.DayDefault = util; }
+	else if(launcher.util == 'poseidon') { utilsExport.PoseidonDefault = util; }
+	else if(launcher.util == 'hades') { utilsExport.HadesDefault = util; }
+	else if(launcher.util == 'commander') { utilsExport.CommanderDefault = util; }
 };
 
 
@@ -196,6 +196,69 @@ const initI18NUtil = (launcher, environment, $pangu) => {
 
 
 
+const initUtil = async (launcher, environment) => {
+	if(!launcher.enabled) { return; }
+
+	let util;
+	if(launcher.util == 'i18n') {
+		util = initI18NUtil(launcher, environment, $pangu);
+	}
+	else if(launcher.util == 'dir') {
+		util = (await import('./util/dir.js')).default(launcher, environment, $pangu);
+	}
+	else if(launcher.util == 'package') {
+		if(!environment.$imported.dir) { await initDefaultUtil('dir', launcher.space, environment); }
+
+		util = (await import('./util/package.js')).default(launcher, environment, $pangu);
+	}
+	else if(launcher.util == 'command') {
+		if(!environment.$imported.package) { await initDefaultUtil('package', launcher.space, environment); }
+
+		util = (await import('./util/command.js')).default(launcher, environment, $pangu);
+	}
+	else if(launcher.util == 'config') {
+		if(!environment.$imported.dir) { await initDefaultUtil('dir', launcher.space, environment); }
+
+		util = (await import('./util/config.js')).default(launcher, environment, $pangu);
+	}
+	else if(launcher.util == 'log') {
+		if(!environment.$imported.dir) { await initDefaultUtil('dir', launcher.space, environment); }
+		if(!environment.$imported.package) { await initDefaultUtil('package', launcher.space, environment); }
+		if(!environment.$imported.config) { await initDefaultUtil('config', launcher.space, environment); }
+
+		util = (await import('./util/log.js')).default(launcher, environment, $pangu);
+	}
+
+	else if(launcher.util == 'process') {
+		if(!environment.$imported.package) { await initDefaultUtil('package', launcher.space, environment); }
+		if(!environment.$imported.log) { await initDefaultUtil('log', launcher.space, environment); }
+
+		util = (await import('./util/process.js')).default(launcher, environment, $pangu);
+	}
+	else if(launcher.util == 'day') {
+		util = (await import('./util/day.js')).default(launcher, environment, $pangu);
+	}
+
+	else if(launcher.util == 'poseidon') {
+		util = environment.$imported[launcher.util] ? environment.Poseidon : (environment.Poseidon = (await import('@nuogz/poseidon')).Poseidon);
+	}
+	else if(launcher.util == 'hades') {
+		util = environment.$imported[launcher.util] ? environment.Hades : (environment.Hades = (await import('@nuogz/hades')).default);
+	}
+	else if(launcher.util == 'commander') {
+		util = environment.$imported[launcher.util] ? environment.Commander : (environment.Commander = (await import('commander/esm.mjs')));
+	}
+
+
+	if(util) {
+		environment.$imported[launcher.util] = true;
+
+		exportUtil(util, launcher);
+	}
+
+
+	return util;
+};
 const initDefaultUtil = async (util, space, environment) => {
 	const launcher = util in launchers$name ? launchers$name[util] : (launchers$name[util] = {
 		name: util, util, alias: '', space,
@@ -207,92 +270,24 @@ const initDefaultUtil = async (util, space, environment) => {
 
 	return initUtil(launcher, environment);
 };
-const initUtil = async (launcher, environment) => {
-	if(!launcher.enabled) { return; }
 
-	let util;
-	if(launcher.util == 'i18n') {
-		util = initI18NUtil(launcher, environment, $pangu);
-	}
-	if(launcher.util == 'dir') {
-		util = (await import('./util/dir.js')).default(launcher, environment, $pangu);
-	}
-	if(launcher.util == 'package') {
-		if(!environment.$imported.dir) { await initDefaultUtil('dir', launcher.space, environment); }
-
-		util = (await import('./util/package.js')).default(launcher, environment, $pangu);
-	}
-	if(launcher.util == 'command') {
-		if(!environment.$imported.package) { await initDefaultUtil('package', launcher.space, environment); }
-
-		util = (await import('./util/command.js')).default(launcher, environment, $pangu);
-	}
-	if(launcher.util == 'config') {
-		if(!environment.$imported.dir) { await initDefaultUtil('dir', launcher.space, environment); }
-
-		util = (await import('./util/config.js')).default(launcher, environment, $pangu);
-	}
-	if(launcher.util == 'log') {
-		if(!environment.$imported.dir) { await initDefaultUtil('dir', launcher.space, environment); }
-		if(!environment.$imported.package) { await initDefaultUtil('package', launcher.space, environment); }
-		if(!environment.$imported.config) { await initDefaultUtil('config', launcher.space, environment); }
-
-		util = (await import('./util/log.js')).default(launcher, environment, $pangu);
-	}
-
-	if(launcher.util == 'process') {
-		if(!environment.$imported.package) { await initDefaultUtil('package', launcher.space, environment); }
-		if(!environment.$imported.log) { await initDefaultUtil('log', launcher.space, environment); }
-
-		util = (await import('./util/process.js')).default(launcher, environment, $pangu);
-	}
-	if(launcher.util == 'day') {
-		util = (await import('./util/day.js')).default(launcher, environment, $pangu);
-	}
-
-	if(launcher.util == 'poseidon') {
-		util = environment.$imported[launcher.util] ? environment.Poseidon : (environment.Poseidon = (await import('@nuogz/poseidon')).Poseidon);
-	}
-	if(launcher.util == 'hades') {
-		util = environment.$imported[launcher.util] ? environment.Hades : (environment.Hades = (await import('@nuogz/hades')).default);
-	}
-	if(launcher.util == 'commander') {
-		util = environment.$imported[launcher.util] ? environment.Commander : (environment.Commander = (await import('commander/esm.mjs')));
-	}
-
-
-	if(util) { environment.$imported[launcher.util] = true; }
-
-	return util;
-};
 
 const promisesWait = $pangu.promisesWait;
 for(const launcher of Object.values(launchers$name).sort(({ util: a }, { util: b }) => (orders$util[a] ?? 9999) - (orders$util[b] ?? 9999))) {
 	const environment = environments$space[launcher.space] ?? (environments$space[launcher.space] = { $imported: {} });
 
 
-	let util = utils$name[launcher.name];
-	let promiseInit;
+	const util = utils$name[launcher.name];
 
 	if(!util) {
-		promiseInit = utils$name[launcher.name] = initUtil(launcher, environment).then(util => {
-			utils$name[launcher.name] = util;
-
-			if(util) { exportUtil(util, launcher); }
-
-			return util;
-		});
+		promisesWait.push(
+			utils$name[launcher.name] = initUtil(launcher, environment)
+				.then(util => utils$name[launcher.name] = util)
+		);
 	}
 	else if(util instanceof Promise) {
-		promiseInit = util.then(util => {
-			if(util) { exportUtil(util, launcher); }
-		});
+		promisesWait.push(util);
 	}
-	else {
-		exportUtil(util, launcher);
-	}
-
-	promisesWait.push(promiseInit);
 }
 
 await Promise.all(promisesWait);
